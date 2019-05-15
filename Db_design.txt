@@ -1,1 +1,29 @@
-Db Design
+Db Design for
+
+User
+- id
+- firstname
+- lastname
+- role
+- phone
+- email
+- password
+- status
+----------------
+- datecreated
+
+
+
+Collaborators
+- id
+- firstname
+- lastname
+- type
+- sourcelang
+- targetlang
+- email
+- phone
+- rank
+- status
+----------------
+- datecreated

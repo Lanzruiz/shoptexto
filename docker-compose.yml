@@ -7,3 +7,5 @@ services:
       - "80:80"
     volumes:
       -  /Users/lanzruiz/Desktop/Files/Project/shoptexto:/var/www/html
+    environment:
+        - ALLOW_OVERRIDE=true
