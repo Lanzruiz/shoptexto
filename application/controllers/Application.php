@@ -52,6 +52,27 @@ class Application extends CI_Controller {
 
 	}
 
+	public function createservice() {
+
+		$this->load->view('/dashboard/createservice');
+	}
+
+	public function services() {
+
+        $this->load->view('/dashboard/services');
+
+	}
+
+	public function createindustry() {
+
+		$this->load->view('/dashboard/createindustry');
+	}
+
+	public function industries() {
+
+		$this->load->view('/dashboard/industries');
+	}
+
 	public function login() {
 
         $this->load->view('/dashboard/login');

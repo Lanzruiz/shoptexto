@@ -87,8 +87,8 @@
         </a>
         <div id="collapseService" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Create Service</a>
-            <a class="collapse-item" href="cards.html">Services</a>
+            <a class="collapse-item" href="createservice">Create Service</a>
+            <a class="collapse-item" href="services">Services</a>
           </div>
         </div>
       </li>
@@ -510,23 +510,23 @@
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Source Language</label>
                         <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected="">Translator</option>
-                          <option>Sworn Translator</option>
-                          <option>Copywriting</option>
-                          <option>SEO/Marketer</option>
-                          <option>Video Editor</option>
-                          <option>Other</option>
+                          <option selected="">None</option>
+                          <option>English</option>
+                          <option>Spanish</option>
+                          <option>Japanese</option>
+                          <option>Chinese</option>
+                          <option>Filipino</option>
                         </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Target Language</label>
                         <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected="">Translator</option>
-                          <option>Sworn Translator</option>
-                          <option>Copywriting</option>
-                          <option>SEO/Marketer</option>
-                          <option>Video Editor</option>
-                          <option>Other</option>
+                          <option selected="">None</option>
+                          <option>English</option>
+                          <option>Spanish</option>
+                          <option>Japanese</option>
+                          <option>Chinese</option>
+                          <option>Filipino</option>
                         </select>
                       </div>
                       <div class="form-group">

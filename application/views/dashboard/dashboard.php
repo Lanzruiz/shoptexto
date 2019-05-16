@@ -86,8 +86,8 @@
         </a>
         <div id="collapseService" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Create Service</a>
-            <a class="collapse-item" href="cards.html">Services</a>
+            <a class="collapse-item" href="/application/createservice">Create Service</a>
+            <a class="collapse-item" href="/application/services">Services</a>
           </div>
         </div>
       </li>

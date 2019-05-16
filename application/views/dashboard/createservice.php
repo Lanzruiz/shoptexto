@@ -9,18 +9,16 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shoptexto - Collaborator</title>
+  <title>Shoptexto - Service</title>
 
-  <!-- Custom fonts for this template -->
+  <!-- Custom fonts for this template-->
   <link href="<?php echo base_url(); ?>views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="<?php echo base_url(); ?>views/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this page -->
-  <link href="<?php echo base_url(); ?>views/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+  <!-- Custom styles for this template-->
+  <link href="<?php echo base_url(); ?>views/dashboard/css/sb-admin-2.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>views/dashboard/css/form.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>views/dashboard/css/bootstrap-select.css">
 </head>
 
 <body id="page-top">
@@ -36,7 +34,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Collaborator</div>
+        <div class="sidebar-brand-text mx-3">Service</div>
       </a>
 
       <!-- Divider -->
@@ -65,31 +63,31 @@
         </a>
         <div id="collapseUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="createuser">Create User</a>
+            <a class="collapse-item active" href="#">Create User</a>
             <a class="collapse-item" href="users">Users</a>
           </div>
         </div>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-share-alt"></i>
           <span>Collaborator</span>
         </a>
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="createcollab">Create Collaborator</a>
-            <a class="collapse-item active" href="#">Collaborators</a>
+            <a class="collapse-item" href="collaborators">Collaborators</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseService" aria-expanded="true" aria-controls="collapseService">
           <i class="fas fa-concierge-bell"></i>
           <span>Service</span>
         </a>
-        <div id="collapseService" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseService" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="createservice">Create Service</a>
+            <a class="collapse-item active" href="#">Create Service</a>
             <a class="collapse-item" href="services">Services</a>
           </div>
         </div>
@@ -102,8 +100,8 @@
         </a>
         <div id="collapseIndustry" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Create Industry</a>
-            <a class="collapse-item" href="cards.html">Industries</a>
+            <a class="collapse-item" href="createindustry">Create Industry</a>
+            <a class="collapse-item" href="industries">Industries</a>
           </div>
         </div>
       </li>
@@ -359,53 +357,147 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Collaborators</h1>
-            <a href="createcollab" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-share-alt"></i> Create Collaborator</a>
+            <h1 class="h3 mb-0 text-gray-800">Service</h1>
+            
           </div>
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">List of Collaborators</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Type</th>
-                      <th>Source</th>
-                      <th>Target</th>
-                      <th>Phone Number</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Type</th>
-                      <th>Source</th>
-                      <th>Target</th>
-                      <th>Phone Number</th>
-                      <th>Status</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Lanz</td>
-                      <td>Ruiz</td>
-                      <td>Copywriter</td>
-                      <td>English</td>
-                      <td>Spanish</td>
-                      <td>54645344</td>
-                      <td>Active</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
+
+
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+     
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            Area Chart -->
+
+            <!-- Pie Chart
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+         
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary"></i> Direct
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Social
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-info"></i> Referral
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          Pie Chart -->
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
+
+              <!-- Project Card Example 
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                </div>
+                <div class="card-body">
+                  <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              Project Card Example -->
+
+            </div>
+
+            <div class="col-lg-12">
+
+              <!-- Illustrations -->
+              <div class="card shadow form-width">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Create a Service</h6>
+                </div>
+                <div class="card-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Service Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Firstname">
+                        
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                  
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -466,12 +558,49 @@
   <script src="<?php echo base_url(); ?>views/dashboard/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo base_url(); ?>views/dashboard/vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/datatables-demo.js"></script>
+  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/chart-pie-demo.js"></script>
+  <script src="<?php echo base_url(); ?>views/dashboard/js/bootstrap-select.js"></script>
+  <script>
+function createOptions(number) {
+  var options = [], _options;
 
+  for (var i = 0; i < number; i++) {
+    var option = '<option value="' + i + '">Option ' + i + '</option>';
+    options.push(option);
+  }
+
+  _options = options.join('');
+  
+  $('#number')[0].innerHTML = _options;
+  $('#number-multiple')[0].innerHTML = _options;
+
+  $('#number2')[0].innerHTML = _options;
+  $('#number2-multiple')[0].innerHTML = _options;
+}
+
+var mySelect = $('#first-disabled2');
+
+createOptions(4000);
+
+$('#special').on('click', function () {
+  mySelect.find('option:selected').prop('disabled', true);
+  mySelect.selectpicker('refresh');
+});
+
+$('#special2').on('click', function () {
+  mySelect.find('option:disabled').prop('disabled', false);
+  mySelect.selectpicker('refresh');
+});
+
+$('#basic2').selectpicker({
+  liveSearch: true,
+  maxOptions: 1
+});
+</script>
 </body>
 
 </html>

@@ -70,27 +70,27 @@
           </div>
         </div>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-share-alt"></i>
           <span>Collaborator</span>
         </a>
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="createcollab">Create Collaborator</a>
-            <a class="collapse-item active" href="#">Collaborators</a>
+            <a class="collapse-item" href="collaborators">Collaborators</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseService" aria-expanded="true" aria-controls="collapseService">
           <i class="fas fa-concierge-bell"></i>
           <span>Service</span>
         </a>
-        <div id="collapseService" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseService" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="createservice">Create Service</a>
-            <a class="collapse-item" href="services">Services</a>
+            <a class="collapse-item active" href="#">Services</a>
           </div>
         </div>
       </li>
@@ -102,8 +102,8 @@
         </a>
         <div id="collapseIndustry" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Create Industry</a>
-            <a class="collapse-item" href="cards.html">Industries</a>
+            <a class="collapse-item" href="createindustry">Create Industry</a>
+            <a class="collapse-item" href="industries">Industries</a>
           </div>
         </div>
       </li>
@@ -359,48 +359,31 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Collaborators</h1>
-            <a href="createcollab" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-share-alt"></i> Create Collaborator</a>
+            <h1 class="h3 mb-0 text-gray-800">Services</h1>
+            <a href="createservice" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-concierge-bell"></i> Create Service</a>
           </div>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">List of Collaborators</h6>
+              <h6 class="m-0 font-weight-bold text-primary">List of Services</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Type</th>
-                      <th>Source</th>
-                      <th>Target</th>
-                      <th>Phone Number</th>
-                      <th>Status</th>
+                      <th>Service Name</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Type</th>
-                      <th>Source</th>
-                      <th>Target</th>
-                      <th>Phone Number</th>
-                      <th>Status</th>
+                      <th>Service Name</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>Lanz</td>
-                      <td>Ruiz</td>
-                      <td>Copywriter</td>
-                      <td>English</td>
-                      <td>Spanish</td>
-                      <td>54645344</td>
-                      <td>Active</td>
+                      <td>Mobile Dev</td>
+                      
                     </tr>
                     
                   </tbody>
