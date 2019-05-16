@@ -32,6 +32,24 @@ class Application extends CI_Controller {
 
 	public function createuser() {
 
+		$this->load->view('/dashboard/createuser');
+
+	}
+
+	public function users() {
+
+		$this->load->view('/dashboard/users');
+	}
+
+	public function createcollab() {
+
+		$this->load->view('/dashboard/createcollaborator');
+	}
+
+	public function collaborators() {
+
+       $this->load->view('/dashboard/collaborators');
+
 	}
 
 	public function login() {
