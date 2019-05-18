@@ -27,3 +27,28 @@ Collaborators
 - status
 ----------------
 - datecreated
+
+create table collaborators (
+    -> id INT AUTO_INCREMENT,
+    -> firstname VARCHAR(200) NOT NULL,
+    -> lastname VARCHAR(200) NOT NULL,
+    -> type INT,
+    -> sourcelang VARCHAR(50) NOT NULL,
+    -> targetlang VARCHAR(50) NOT NULL,
+    -> email VARCHAR(200) NOT NULL,
+    -> phone INT,
+    -> rank INT,
+    -> status INT,
+    -> datecreated DATE,
+    -> PRIMARY KEY (id)
+    -> );
+
+
+    Services
+    create table services (
+    -> id INT AUTO_INCREMENT,
+    -> servicename VARCHAR(100) NOT NULL,
+    -> datecreated DATE,
+    -> status INT,
+    -> PRIMARY KEY (id)
+    -> );

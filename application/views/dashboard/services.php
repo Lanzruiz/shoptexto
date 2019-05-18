@@ -12,14 +12,14 @@
   <title>Shoptexto - Collaborator</title>
 
   <!-- Custom fonts for this template -->
-  <link href="<?php echo base_url(); ?>views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="<?php echo base_url(); ?>views/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="<?php echo base_url(); ?>views/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -115,20 +115,20 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProject" aria-expanded="true" aria-controls="collapseProject">
-          <i class="fas fa-layer-group"></i>
+          <i class="fas fa-tasks"></i>
           <span>Project</span>
         </a>
         <div id="collapseProject" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Create Project</a>
-            <a class="collapse-item" href="cards.html">Projects Management</a>
+            <a class="collapse-item" href="/application/createproject">Create Project</a>
+            <a class="collapse-item" href="/application/projects">Projects Management</a>
           </div>
         </div>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFinance" aria-expanded="true" aria-controls="collapseFinance">
-          <i class="fas fa-layer-group"></i>
+          <i class="fas fa-cash-register"></i>
           <span>Finance</span>
         </a>
         <div id="collapseFinance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -373,18 +373,24 @@
                   <thead>
                     <tr>
                       <th>Service Name</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tfoot>
+
                     <tr>
                       <th>Service Name</th>
+                      <th>Status</th>
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php foreach ($services as $items): ?>
                     <tr>
-                      <td>Mobile Dev</td>
+                      <td><?php echo $items->servicename; ?></td>
+                      <td><?php if($items->status == 0){ echo "Inactive"; } else { echo "Active"; } ?></td>
                       
                     </tr>
+                    <?php endforeach;?>
                     
                   </tbody>
                 </table>
@@ -439,21 +445,21 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/datatables-demo.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/demo/datatables-demo.js"></script>
 
 </body>
 

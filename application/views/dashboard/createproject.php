@@ -9,23 +9,32 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shoptexto - User</title>
+  <title>Shoptexto - Project</title>
 
   <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url(); ?>/application/views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url(); ?>views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/sb-admin-2.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/form.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/application/views/dashboard/css/bootstrap-select.css">
+  <link href="<?php echo base_url(); ?>views/dashboard/css/sb-admin-2.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>views/dashboard/css/form.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>views/dashboard/css/bootstrap-select.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#datepickerEstimate" ).datepicker();
+      $( "#datepickerDeadline" ).datepicker();
+    } );
+  </script>
 </head>
 
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-
+   
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -34,7 +43,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">User</div>
+        <div class="sidebar-brand-text mx-3">Dashboard</div>
       </a>
 
       <!-- Divider -->
@@ -56,15 +65,15 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
           <i class="fas fa-users"></i>
           <span>User</span>
         </a>
-        <div id="collapseUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item active" href="#">Create User</a>
-            <a class="collapse-item" href="users">Users</a>
+            <a class="collapse-item" href="/application/createuser">Create User</a>
+            <a class="collapse-item" href="application/users">Users</a>
           </div>
         </div>
       </li>
@@ -75,8 +84,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="createcollab">Create Collaborator</a>
-            <a class="collapse-item" href="collaborators">Collaborators</a>
+            <a class="collapse-item" href="application/createcollab">Create Collaborator</a>
+            <a class="collapse-item" href="application/collaborators">Collaborators</a>
           </div>
         </div>
       </li>
@@ -87,8 +96,8 @@
         </a>
         <div id="collapseService" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="createservice">Create Service</a>
-            <a class="collapse-item" href="services">Services</a>
+            <a class="collapse-item" href="/application/createservice">Create Service</a>
+            <a class="collapse-item" href="/application/services">Services</a>
           </div>
         </div>
       </li>
@@ -100,8 +109,21 @@
         </a>
         <div id="collapseIndustry" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="createindustry">Create Industry</a>
-            <a class="collapse-item" href="industries">Industries</a>
+            <a class="collapse-item" href="/application/createindustry">Create Industry</a>
+            <a class="collapse-item" href="/application/industries">Industries</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmail" aria-expanded="true" aria-controls="collapseEmail">
+          <i class="fas fa-envelope-open-text"></i>
+          <span>Email Template</span>
+        </a>
+        <div id="collapseEmail" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/application/createindustry">Create E-mail Template</a>
+            <a class="collapse-item" href="/application/industries">E-mail Templates</a>
           </div>
         </div>
       </li>
@@ -111,15 +133,15 @@
       <hr class="sidebar-divider">
 
 
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProject" aria-expanded="true" aria-controls="collapseProject">
           <i class="fas fa-tasks"></i>
           <span>Project</span>
         </a>
-        <div id="collapseProject" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseProject" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/application/createproject">Create Project</a>
-            <a class="collapse-item" href="/application/projects">Projects Management</a>
+            <a class="collapse-item active" href="#">Create Project</a>
+            <a class="collapse-item" href="projects">Projects Management</a>
           </div>
         </div>
       </li>
@@ -149,7 +171,6 @@
           </div>
         </div>
       </li>
-
 
   
 
@@ -358,7 +379,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Users</h1>
+            <h1 class="h3 mb-0 text-gray-800">Project</h1>
             
           </div>
 
@@ -483,49 +504,88 @@
               <!-- Illustrations -->
               <div class="card shadow form-width">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Create a user</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Create a Project</h6>
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo base_url(); ?>process/save/user" method="post">
+                    <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">First Name</label>
-                        <input type="input" name="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Firstname">
+                        <label for="exampleInputEmail1">ID</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" disabled="" value="SH-LR-4330">
                         
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Last Name</label>
-                        <input type="input" name="lname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Lastname">
+                          <label for="exampleInputEmail1">Client</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Client Name">
                         
                       </div>
                       <div class="form-group">
-                        <label for="tokens">Role</label>
-                        <select id="tokens exampleInputEmail1" name="role" class="selectpicker form-control border" multiple data-live-search="true">
-                          <option value="5" data-tokens="first">Administrator</option>
-                          <option value="4" data-tokens="second">Project Manager</option>
-                          <option value="3" data-tokens="last">Sales</option>
-                          <option value="2" data-tokens="last">Finance</option>
-                          <option value="1" data-tokens="last">HR</option>
+                          <label for="exampleInputEmail1">Estimated Date</label>
+                          <div class='input-group date' id='datetimepicker1'>
+                              <input type='text' class="form-control" id="datepickerEstimate" />
+                              <span class="input-group-addon">
+                                  <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Deadline</label>
+                          <div class='input-group date' id='datetimepicker1'>
+                              <input type='text' class="form-control" id="datepickerDeadline" />
+                              <span class="input-group-addon">
+                                  <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Source Language</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected="">None</option>
+                          <option>English</option>
+                          <option>Spanish</option>
+                          <option>Japanese</option>
+                          <option>Chinese</option>
+                          <option>Filipino</option>
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Code</label>
-                        <input type="input" name="code" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
-                        
+                        <label for="exampleFormControlSelect1">Target Language</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected="">None</option>
+                          <option>English</option>
+                          <option>Spanish</option>
+                          <option>Japanese</option>
+                          <option>Chinese</option>
+                          <option>Filipino</option>
+                        </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Phone Number</label>
-                        <input type="input" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onkeydown="return keyispressed(event);" placeholder="Enter Phone Number">
-                        
+                        <label for="exampleFormControlSelect1">Services</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected="">None</option>
+                          <option>Development</option>
+                          <option>Seo</option>
+                        </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">E-mail</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail">
-                        
+                        <label for="exampleFormControlSelect1">Industry</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected="">None</option>
+                          <option>Development</option>
+                          <option>Seo</option>
+                        </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="exampleInputEmail1">Billed</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                        
                       </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Attach Files</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                        
+                      </div>
+                      
                       
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -581,69 +641,17 @@
       </div>
     </div>
   </div>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <!-- Bootstrap core JavaScript-->
+  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/demo/chart-area-demo.js"></script>
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/demo/chart-pie-demo.js"></script>
-  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/bootstrap-select.js"></script>
-  <script>
-function createOptions(number) {
-  var options = [], _options;
-
-  for (var i = 0; i < number; i++) {
-    var option = '<option value="' + i + '">Option ' + i + '</option>';
-    options.push(option);
-  }
-
-  _options = options.join('');
+  <script src="<?php echo base_url(); ?>views/dashboard/js/sb-admin-2.min.js"></script>
+ 
   
-  $('#number')[0].innerHTML = _options;
-  $('#number-multiple')[0].innerHTML = _options;
-
-  $('#number2')[0].innerHTML = _options;
-  $('#number2-multiple')[0].innerHTML = _options;
-}
-
-var mySelect = $('#first-disabled2');
-
-createOptions(4000);
-
-$('#special').on('click', function () {
-  mySelect.find('option:selected').prop('disabled', true);
-  mySelect.selectpicker('refresh');
-});
-
-$('#special2').on('click', function () {
-  mySelect.find('option:disabled').prop('disabled', false);
-  mySelect.selectpicker('refresh');
-});
-
-$('#basic2').selectpicker({
-  liveSearch: true,
-  maxOptions: 1
-});
-
-function keyispressed(e){
-    var charval= String.fromCharCode(e.keyCode);
-    if((isNaN(charValue)) && (e.which != 8 )){ // BSP KB code is 8
-        e.preventDefault();
-    }
-    return true;
-}
-</script>
 </body>
 
 </html>

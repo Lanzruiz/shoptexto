@@ -12,13 +12,13 @@
   <title>Shoptexto - Industry</title>
 
   <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url(); ?>views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="<?php echo base_url(); ?>views/dashboard/css/sb-admin-2.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>views/dashboard/css/form.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>views/dashboard/css/bootstrap-select.css">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/sb-admin-2.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/form.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/application/views/dashboard/css/bootstrap-select.css">
 </head>
 
 <body id="page-top">
@@ -63,7 +63,7 @@
         </a>
         <div id="collapseUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item active" href="#">Create User</a>
+            <a class="collapse-item" href="createuser">Create User</a>
             <a class="collapse-item" href="users">Users</a>
           </div>
         </div>
@@ -113,20 +113,20 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProject" aria-expanded="true" aria-controls="collapseProject">
-          <i class="fas fa-layer-group"></i>
+          <i class="fas fa-tasks"></i>
           <span>Project</span>
         </a>
         <div id="collapseProject" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Create Project</a>
-            <a class="collapse-item" href="cards.html">Projects Management</a>
+            <a class="collapse-item" href="/application/createproject">Create Project</a>
+            <a class="collapse-item" href="/application/projects">Projects Management</a>
           </div>
         </div>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFinance" aria-expanded="true" aria-controls="collapseFinance">
-          <i class="fas fa-layer-group"></i>
+          <i class="fas fa-cash-register"></i>
           <span>Finance</span>
         </a>
         <div id="collapseFinance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -548,58 +548,58 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/chart.js/Chart.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/chart-area-demo.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/chart-pie-demo.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/js/bootstrap-select.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/demo/chart-pie-demo.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/bootstrap-select.js"></script>
   <script>
-function createOptions(number) {
-  var options = [], _options;
+    function createOptions(number) {
+      var options = [], _options;
 
-  for (var i = 0; i < number; i++) {
-    var option = '<option value="' + i + '">Option ' + i + '</option>';
-    options.push(option);
-  }
+      for (var i = 0; i < number; i++) {
+        var option = '<option value="' + i + '">Option ' + i + '</option>';
+        options.push(option);
+      }
 
-  _options = options.join('');
-  
-  $('#number')[0].innerHTML = _options;
-  $('#number-multiple')[0].innerHTML = _options;
+      _options = options.join('');
+      
+      $('#number')[0].innerHTML = _options;
+      $('#number-multiple')[0].innerHTML = _options;
 
-  $('#number2')[0].innerHTML = _options;
-  $('#number2-multiple')[0].innerHTML = _options;
-}
+      $('#number2')[0].innerHTML = _options;
+      $('#number2-multiple')[0].innerHTML = _options;
+    }
 
-var mySelect = $('#first-disabled2');
+    var mySelect = $('#first-disabled2');
 
-createOptions(4000);
+    createOptions(4000);
 
-$('#special').on('click', function () {
-  mySelect.find('option:selected').prop('disabled', true);
-  mySelect.selectpicker('refresh');
-});
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
 
-$('#special2').on('click', function () {
-  mySelect.find('option:disabled').prop('disabled', false);
-  mySelect.selectpicker('refresh');
-});
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
 
-$('#basic2').selectpicker({
-  liveSearch: true,
-  maxOptions: 1
-});
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
 </script>
 </body>
 

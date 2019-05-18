@@ -2,10 +2,11 @@ version: '3.2'
 services:
   web:
     #build: .
-    image: fauria/lamp
+    image: mattrayner/lamp
     ports:
       - "80:80"
     volumes:
       -  /Users/lanzruiz/Desktop/Files/Project/shoptexto:/var/www/html
+      -  /Users/lanzruiz/Desktop/Files/Project/shoptexto/conf:/etc/apache2/sites-enabled
     environment:
         - ALLOW_OVERRIDE=true

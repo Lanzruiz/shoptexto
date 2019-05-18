@@ -12,13 +12,13 @@
   <title>Shoptexto - Collaborator</title>
 
   <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url(); ?>views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/css.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="<?php echo base_url(); ?>views/dashboard/css/sb-admin-2.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>views/dashboard/css/form.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>views/dashboard/css/bootstrap-select.css">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/sb-admin-2.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/form.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/application/views/dashboard/css/bootstrap-select.css">
 </head>
 
 <body id="page-top">
@@ -63,7 +63,7 @@
         </a>
         <div id="collapseUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Create User</a>
+            <a class="collapse-item" href="createuser">Create User</a>
             <a class="collapse-item" href="users">Users</a>
           </div>
         </div>
@@ -113,20 +113,20 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProject" aria-expanded="true" aria-controls="collapseProject">
-          <i class="fas fa-layer-group"></i>
+          <i class="fas fa-tasks"></i>
           <span>Project</span>
         </a>
         <div id="collapseProject" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Create Project</a>
-            <a class="collapse-item" href="cards.html">Projects Management</a>
+            <a class="collapse-item" href="/application/createproject">Create Project</a>
+            <a class="collapse-item" href="/application/projects">Projects Management</a>
           </div>
         </div>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFinance" aria-expanded="true" aria-controls="collapseFinance">
-          <i class="fas fa-layer-group"></i>
+          <i class="fas fa-cash-register"></i>
           <span>Finance</span>
         </a>
         <div id="collapseFinance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -149,6 +149,7 @@
           </div>
         </div>
       </li>
+
 
   
 
@@ -485,74 +486,70 @@
                   <h6 class="m-0 font-weight-bold text-primary">Create a Collaborator</h6>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="<?php echo base_url(); ?>process/save/collaborator" method="post">
                       <div class="form-group">
                         <label for="exampleInputEmail1">First Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Firstname">
+                        <input type="input" name="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Firstname">
                         
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Last Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Lastname">
+                        <input type="input" name="lastname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Lastname">
                         
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Type</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected="">Translator</option>
-                          <option>Sworn Translator</option>
-                          <option>Copywriting</option>
-                          <option>SEO/Marketer</option>
-                          <option>Video Editor</option>
-                          <option>Other</option>
+                        <select class="form-control" name="type" id="exampleFormControlSelect1">
+                          <option value="1" selected="">Translator</option>
+                          <option value="2">Sworn Translator</option>
+                          <option value="3">Copywriting</option>
+                          <option value="4">SEO/Marketer</option>
+                          <option value="5">Video Editor</option>
+                          <option value="0">Other</option>
                         </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Source Language</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected="">None</option>
-                          <option>English</option>
-                          <option>Spanish</option>
-                          <option>Japanese</option>
-                          <option>Chinese</option>
-                          <option>Filipino</option>
+                        <select class="form-control" name="sourcelang" id="exampleFormControlSelect1">
+                          <option value="None" selected="">None</option>
+                          <option value="English">English</option>
+                          <option value="Spanish">Spanish</option>
+                          <option value="Japanese">Japanese</option>
+                          <option value="Chinese">Chinese</option>
+                          <option value="Filipino">Filipino</option>
                         </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Target Language</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected="">None</option>
-                          <option>English</option>
-                          <option>Spanish</option>
-                          <option>Japanese</option>
-                          <option>Chinese</option>
-                          <option>Filipino</option>
+                        <select class="form-control" name="targetlang" id="exampleFormControlSelect1">
+                          <option value="None" selected="">None</option>
+                          <option value="English">English</option>
+                          <option value="Spanish">Spanish</option>
+                          <option value="Japanese">Japanese</option>
+                          <option value="Chinese">Chinese</option>
+                          <option value="Filipino">Filipino</option>
                         </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">E-mail</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail">
                         
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Phone number</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail">
+                        <input type="input" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail">
                         
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Rank</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected="">0</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                        <select class="form-control" name="rank" id="exampleFormControlSelect1">
+                          <option value="0" selected="">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
                         </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       
                       <button type="submit" class="btn btn-primary">Submit</button>
@@ -611,22 +608,22 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/chart.js/Chart.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/chart-area-demo.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/js/demo/chart-pie-demo.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/js/bootstrap-select.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/demo/chart-pie-demo.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/bootstrap-select.js"></script>
   <script>
 function createOptions(number) {
   var options = [], _options;
