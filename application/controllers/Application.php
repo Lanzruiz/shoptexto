@@ -25,6 +25,7 @@ class Application extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->model('collaborator_model');
 		$this->load->model('service_model');
+		$this->load->model('industry_model');
 		$this->load->helper('url');
 		$this->load->helper('date');
 	}
@@ -39,17 +40,21 @@ class Application extends CI_Controller {
        if( !$this->dbutil->database_exists('shoptexto_database')) {
             echo 'Not connected to a database, or database not exists';
         } else {
-        	$this->load->view('/dashboard/dashboard');
+        	
+        	$session = $this->session->userdata('session_data');
+
+			if($session['hash'] != "") {
+
+				$this->load->view('/dashboard/dashboard');
+
+			} else {
+
+	            redirect('application/login', 'refresh');
+			}
         }   
 
 
 	} 
-
-	public function dashboard() {
-
-        $this->load->view('/dashboard/dashboard');
-
-	}
 
 	public function createuser() {
 		$this->load->helper('form');
@@ -67,7 +72,17 @@ class Application extends CI_Controller {
 
 	public function createcollab() {
 
-		$this->load->view('/dashboard/createcollaborator');
+		
+		$session = $this->session->userdata('session_data');
+
+		if($session['hash'] != "") {
+
+			$this->load->view('/dashboard/createcollaborator');
+
+		} else {
+
+            redirect('application/login', 'refresh');
+		}
 	}
 
 	public function collaborators() {
@@ -97,12 +112,16 @@ class Application extends CI_Controller {
 
 	public function industries() {
 
-		$this->load->view('/dashboard/industries');
+        $data['industries'] = $this->industry_model->all();
+		$this->load->view('/dashboard/industries', $data);
 	}
   
     public function createproject() {
 
-    	$this->load->view('/dashboard/createproject');
+        $data['services'] = $this->service_model->all();
+    	$data['industries'] = $this->industry_model->all();
+
+    	$this->load->view('/dashboard/createproject', $data);
     }
 
     public function projects() {
@@ -112,7 +131,18 @@ class Application extends CI_Controller {
 
 	public function login() {
 
-        $this->load->view('/dashboard/login');
+		$session = $this->session->userdata('session_data');
+
+		if($session['hash'] != "") {
+
+			redirect('application/dashboard', 'refresh');
+
+		} else {
+
+            $this->load->view('/dashboard/login');
+		}
+
+        
 	}
 
 }

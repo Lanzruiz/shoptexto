@@ -374,18 +374,23 @@
                   <thead>
                     <tr>
                       <th>Industry Name</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Industry Name</th>
+                      <th>Status</th>
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php foreach ($industries as $items): ?>
                     <tr>
-                      <td>Software Engineering</td>
+                      <td><?php echo $items->industryname; ?></td>
+                      <td><?php if($items->status == 0){ echo "Inactive"; } else { echo "Active"; } ?></td>
                       
                     </tr>
+                    <?php endforeach;?>
                     
                   </tbody>
                 </table>

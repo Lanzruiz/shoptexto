@@ -17,8 +17,25 @@ class User_model extends CI_Model{
         return $query->result();
 	}
 
-	function log($data) {
+	function validate($data) {
+        
+        $condition = "email =" . "'" . $data['email'] . "' AND " . "password =" . "'" . md5($data['password']) . "'AND status = 1";
+ 
+		$this->db->select('*');
+	    $this->db->from('user');
+		$this->db->where($condition);
+		$this->db->limit(1);
+			
+		$query = $this->db->get();
 
-	}
+		if ($query->num_rows() == 1) {
+
+            return true;
+
+        } else {
+             
+            return false;
+        }
+	} 
 }
 ?>

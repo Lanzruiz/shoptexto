@@ -25,6 +25,7 @@ class Process extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->model('service_model');
 		$this->load->model('collaborator_model');
+		$this->load->model('industry_model');
 		$this->load->helper('url');
 		$this->load->helper('date');
 	}
@@ -84,11 +85,71 @@ class Process extends CI_Controller {
 
 			redirect('application/services', 'refresh');
 
+		} else if($entities == 'industry') {
+
+           $data = array(
+                'industryname' => $this->input->post('industryname'),
+                'status' => 0,
+				'datecreated' => date('y-m-d')
+
+			);
+
+			$this->industry_model->save($data);
+
+			redirect('application/industries', 'refresh');
 		}
 	}
 
-	function login() {
+	function login() {    
+        
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');  
 
+        if ($this->form_validation->run() === FALSE)
+        {            
+            
+            redirect('application/login', 'refresh');
+ 
+        } else {
+
+
+	        $data = array(
+
+                'email' => $this->input->post('email'),
+                'password' => $this->input->post("password")
+
+			);
+
+        	if ($this->user_model->validate($data) == true) {
+
+        		$datasession = array(
+                    
+
+                    'email'  => $this->input->post('email'),
+                    'password' => MD5($this->input->post("password")),
+                    'hash' => MD5($this->input->post('email').$this->input->post("password"))
+
+        		);
+
+        		$this->session->set_userdata('session_data', $datasession);
+
+        		redirect('/', 'refresh');
+                
+        	}else {
+        	   
+        	    redirect('application/login', 'refresh');
+
+        	}
+        	
+        }
+        
+
+	}
+
+	function logout() {
+
+        session_destroy();
+        redirect('application/login', 'refresh');
 	}
 
 }

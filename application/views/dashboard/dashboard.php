@@ -352,7 +352,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="/process/logout" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -383,7 +383,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Users</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                      <a href="/application/users">
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                      </a>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -400,7 +402,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Collaborators</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                      <a href="/application/collaborators">
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                      </a>    
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-share-alt fa-2x text-gray-300"></i>
@@ -705,7 +709,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="<?php echo base_url(); ?>/process/logout">Logout</a>
         </div>
       </div>
     </div>

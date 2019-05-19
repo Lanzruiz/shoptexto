@@ -12,13 +12,15 @@
   <title>Shoptexto - Project</title>
 
   <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url(); ?>views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom styles for this template-->
-  <link href="<?php echo base_url(); ?>views/dashboard/css/sb-admin-2.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>views/dashboard/css/form.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>views/dashboard/css/bootstrap-select.css">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/sb-admin-2.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/application/views/dashboard/css/form.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/application/views/dashboard/css/bootstrap-select.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -562,16 +564,18 @@
                         <label for="exampleFormControlSelect1">Services</label>
                         <select class="form-control" id="exampleFormControlSelect1">
                           <option selected="">None</option>
-                          <option>Development</option>
-                          <option>Seo</option>
+                          <?php foreach ($services as $items): ?>
+                          <option value="<?php echo $items->id; ?>"><?php echo $items->servicename; ?></option>
+                          <?php endforeach;?>
                         </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Industry</label>
                         <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected="">None</option>
-                          <option>Development</option>
-                          <option>Seo</option>
+                          <option value="0" selected="">None</option>
+                          <?php foreach ($industries as $items): ?>
+                          <option value="<?php echo $items->id; ?>"><?php echo $items->industryname; ?></option>
+                          <?php endforeach;?>
                         </select>
                       </div>
                       <div class="form-group">
@@ -642,14 +646,12 @@
     </div>
   </div>
    <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url(); ?>views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url(); ?>views/dashboard/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo base_url(); ?>/application/views/dashboard/js/sb-admin-2.min.js"></script>
  
   
 </body>

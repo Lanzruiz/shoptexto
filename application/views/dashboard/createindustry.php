@@ -485,10 +485,10 @@
                   <h6 class="m-0 font-weight-bold text-primary">Create a Industry</h6>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="<?php echo base_url(); ?>process/save/industry" method="post">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Industry Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Industry Name">
+                        <input type="input" name="industryname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Industry Name">
                         
                       </div>
                       
